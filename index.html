@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownMotors | Venta de Autos Usados en El Paso, TX</title>
+  <link rel="icon" href="crownmotors_logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { scroll-behavior: smooth; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: url('./crownmotors_bg.PNG') no-repeat center center fixed;
+      background-size: cover;
+      color: #e6e6e6;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 150px;
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      background-color: rgba(17, 17, 17, 0.75);
+      padding: 15px 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover { color: #e60000; }
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    h2 { color: #e60000; margin-bottom: 20px; }
+    .highlight { color: #e60000; }
+    .fade-in {
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .social-buttons {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 100;
+    }
+    .social-buttons a img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.2s;
+    }
+    .social-buttons a img:hover { transform: scale(1.1); }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 99;
+    }
+    footer {
+      background-color: rgba(17, 17, 17, 0.75);
+      color: #aaa;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+    button:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .ventaja:hover, .paso:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+    <a href="#" id="topBtn" title="Volver arriba" style="position:fixed;bottom:20px;left:20px;background:#e60000;color:white;padding:10px 15px;border-radius:5px;display:none;z-index:1000;">↑ Arriba</a>
+
+    <div class="popup" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85); color: white; padding: 15px 30px; border-radius: 30px;
+    font-weight: bold; z-index: 1000; text-align: center;">
+    Bienvenido a CrownMotors. Te ayudamos a encontrar el auto perfecto, con confianza y estilo.
+    </div>
+    
+    <button onclick="toggleIdioma()" style="position:fixed;top:20px;right:20px;background:#e60000;color:white;padding:10px 15px;border:none;border-radius:5px;z-index:1000;">Español / English</button>
+    
+    <header class="fade-in">
+      <img src="crownmotors_logo.png" alt="CrownMotors Logo" />
+      <h1 data-es="CrownMotors" data-en="CrownMotors">CrownMotors</h1>
+      <p data-es="Venta de Autos Usados en El Paso, TX" data-en="Used Car Sales in El Paso, TX">Venta de Autos Usados en <span class="highlight">El Paso, TX</span></p>
+    </header>
+    
+    <nav class="fade-in">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre">Sobre Nosotros</a></li>
+        <li><a href="#autos">Autos en Venta</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#ventajas">¿Por Qué Elegirnos?</a></li>
+        <li><a href="#pasos">¿Cómo Funciona?</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    
+    <section id="inicio" class="fade-in">
+      <h2 data-es="Bienvenido a CrownMotors" data-en="Welcome to CrownMotors">Bienvenido a CrownMotors</h2>
+      <p data-es="Tu nueva opción de confianza en la compra de autos usados en El Paso, TX. Calidad, servicio y atención personalizada para ayudarte a encontrar el vehículo ideal. ¡Con nosotros, tu próximo carro está más cerca de lo que piensas!" data-en="Your new trusted option for buying used cars in El Paso, TX. Quality, service, and personalized attention to help you find the ideal vehicle. With us, your next car is closer than you think!">Tu nueva opción de confianza en la compra de autos usados en El Paso, TX. Calidad, servicio y atención personalizada para ayudarte a encontrar el vehículo ideal. ¡Con nosotros, tu próximo carro está más cerca de lo que piensas!</p>
+    </section>
+    
+    <section id="sobre" class="fade-in">
+      <h2 data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h2>
+      <p data-es="CrownMotors es una empresa que recién comienza su camino en la ciudad de El Paso, TX. Nos apasiona ayudar a nuestros clientes a encontrar autos usados en excelente estado, a buen precio y con una atención honesta y cercana. ¡Queremos crecer contigo!" data-en="CrownMotors is a company that is just starting its journey in the city of El Paso, TX. We are passionate about helping our customers find used cars in excellent condition, at a good price, and with honest and close attention. We want to grow with you!">CrownMotors es una empresa que recién comienza su camino en la ciudad de El Paso, TX. Nos apasiona ayudar a nuestros clientes a encontrar autos usados en excelente estado, a buen precio y con una atención honesta y cercana. ¡Queremos crecer contigo!</p>
+    </section>
+    
+    <section id="autos" class="fade-in">
+      <h2 data-es="Autos en Venta" data-en="Cars for Sale">Autos en Venta</h2>
+      <p data-es="Próximamente aparecerán aquí los autos disponibles para venta. ¡Mantente al pendiente!" data-en="Coming soon, the available cars for sale will appear here. Stay tuned!">Próximamente aparecerán aquí los autos disponibles para venta. ¡Mantente al pendiente!</p>
+    </section>
+    
+    <section id="blog" class="fade-in">
+      <h2 data-es="Blog y Noticias" data-en="Blog and News">Blog y Noticias</h2>
+      <article>
+        <h3 data-es="¿Qué revisar antes de comprar un auto usado?" data-en="What to check before buying a used car?">¿Qué revisar antes de comprar un auto usado?</h3>
+        <p data-es="Comprar un auto usado puede ser una gran decisión. Aquí te damos tips para asegurarte de que tu compra sea segura y satisfactoria..." data-en="Buying a used car can be a big decision. Here are tips to ensure your purchase is safe and satisfying...">Comprar un auto usado puede ser una gran decisión. Aquí te damos tips para asegurarte de que tu compra sea segura y satisfactoria...</p>
+      </article>
+      <article>
+        <h3 data-es="Tendencias del mercado de autos usados en Texas" data-en="Trends in the used car market in Texas">Tendencias del mercado de autos usados en Texas</h3>
+        <p data-es="El mercado de autos usados sigue creciendo. Te compartimos datos recientes y lo que debes saber antes de comprar..." data-en="The used car market continues to grow. We share recent data and what you should know before buying...">El mercado de autos usados sigue creciendo. Te compartimos datos recientes y lo que debes saber antes de comprar...</p>
+      </article>
+    </section>
+    
+    <section id="ventajas" class="fade-in">
+      <h2 data-es="¿Por Qué Elegirnos?" data-en="Why Choose Us?">¿Por Qué Elegirnos?</h2>
+      <div class="ventajas" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div class="ventaja" style="background-color: rgba(255,255,255,0.15); padding: 25px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; max-width: 300px;">✅ Carros verificados</div>
+        <div class="ventaja" style="background-color: rgba(255,255,255,0.15); padding: 25px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; max-width: 300px;">🚗 Precios competitivos</div>
+        <div class="ventaja" style="background-color: rgba(255,255,255,0.15); padding: 25px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; max-width: 300px;">📞 Atención personalizada</div>
+        <div class="ventaja" style="background-color: rgba(255,255,255,0.15); padding: 25px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; max-width: 300px;">🔒 Sitio seguro</div>
+        <div class="ventaja" style="background-color: rgba(255,255,255,0.15); padding: 25px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: center; max-width: 300px;">🕒 Respuesta rápida</div>
+      </div>
+    </section>
+    
+    <section id="pasos" class="fade-in">
+      <h2 data-es="Compra tu Auto en 3 Pasos" data-en="Buy Your Car in 3 Steps">Compra tu Auto en 3 Pasos</h2>
+      <div class="pasos" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <p style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); max-width: 300px;" data-es="1. Explora: Mira los autos disponibles y elige el que más te guste." data-en="1. Explore: Look at the available cars and choose the one you like the most."><strong>1. Explora:</strong> Mira los autos disponibles y elige el que más te guste.</p>
+        <p style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); max-width: 300px;" data-es="2. Contáctanos: Mándanos un WhatsApp o llena el formulario." data-en="2. Contact Us: Send us a WhatsApp or fill out the form."><strong>2. Contáctanos:</strong> Mándanos un WhatsApp o llena el formulario.</p>
+        <p style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); max-width: 300px;" data-es="3. Maneja feliz: Te ayudamos con todo el proceso para que salgas manejando." data-en="3. Drive Happy: We help you with the entire process so you can drive away."><strong>3. Maneja feliz:</strong> Te ayudamos con todo el proceso para que salgas manejando.</p>
+      </div>
+    </section>
+    
+    <section id="ubicacion" class="fade-in">
+        <h2 data-es="Ubicación" data-en="Location">Ubicación</h2>
+        <p data-es="Nos encontramos en El Paso, TX. ¡Ven a visitarnos!" data-en="We are located in El Paso, TX. Come visit us!">Nos encontramos en El Paso, TX. ¡Ven a visitarnos!</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108206.68323603847!2d-106.5235279601461!3d31.772543180882768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75b0a7dd9ee07%3A0x36f51070f82b7427!2sEl%20Paso%2C%20TX!5e0!3m2!1ses-419!2sus!4v1680870558997" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+      
+      <section id="contacto" class="fade-in">
+        <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+        <p data-es="Nombre: Pedro Lopez Cortez" data-en="Name: Pedro Lopez Cortez"><strong>Nombre:</strong> Pedro Lopez Cortez</p>
+        <p data-es="Teléfono: 915-706-3079" data-en="Phone: 915-706-3079"><strong>Teléfono:</strong> <a href="tel:9157063079">915-706-3079</a></p>
+        <p data-es="Instagram: @crownmotorsrsc" data-en="Instagram: @crownmotorsrsc"><strong>Instagram:</strong> <a href="https://www.instagram.com/crownmotorsrsc" target="_blank">@crownmotorsrsc</a></p>
+      </section>
+      
+      <section id="formulario-contacto" class="fade-in">
+        <h2 data-es="Déjanos tu información" data-en="Leave Us Your Information">Déjanos tu información</h2>
+        <p data-es="¿Quieres que te contactemos? Llena este formulario y nos pondremos en contacto contigo lo más pronto posible." data-en="Do you want us to contact you? Fill out this form and we will get in touch with you as soon as possible.">¿Quieres que te contactemos? Llena este formulario y nos pondremos en contacto contigo lo más pronto posible.</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGWK-Ok1FKZ2nOpW6Pk2IFMy--qWQUSU9bQmaky2IYjkUO5Q/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+      </section>
+      
+      <a href="https://wa.me/19157063079" class="whatsapp-float" target="_blank">¿Tienes dudas? Escríbenos</a>
+      
+      <div class="social-buttons">
+        <a href="https://wa.me/19157063079" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.instagram.com/crownmotorsrsc" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+        </a>
+      </div>
+      
+      <footer>
+        <p data-es="© 2025 CrownMotors. Todos los derechos reservados." data-en="© 2025 CrownMotors. All rights reserved.">&copy; 2025 CrownMotors. Todos los derechos reservados.</p>
+        <p data-es="Síguenos en nuestras redes y encuentra el auto que buscas." data-en="Follow us on our networks and find the car you are looking for.">Síguenos en nuestras redes y encuentra el auto que buscas.</p>
+      </footer>
+      
+      <script>
+        function toggleIdioma() {
+          const textos = document.querySelectorAll("[data-en]");
+          textos.forEach(el => {
+            const actual = el.textContent.trim();
+            const en = el.getAttribute("data-en");
+            const es = el.getAttribute("data-es") || actual;
+            if (!el.hasAttribute("data-es")) {
+              el.setAttribute("data-es", es);
+            }
+            el.textContent = actual === en ? es : en;
+          });
+        }
+      
+        const topBtn = document.getElementById("topBtn");
+        window.onscroll = function () {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+          } else {
+            topBtn.style.display = "none";
+          }
+        };
+      
+        ScrollReveal().reveal('section', {
+          delay: 100,
+          duration: 800,
+          distance: '50px',
+          origin: 'bottom',
+          reset: false
+        });
+      </script>
+      
+      </body>
+      </html>
